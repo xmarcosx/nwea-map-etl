@@ -1,6 +1,6 @@
 # NWEA MAP Growth
 
-This repository contains code for a Google Cloud Function that fetches CSV files from the NWEA MAP API and uploads them to a Google Cloud Storage bucket. This repository is meant to be forked and configured to utilize GitHub Actions to deploy a Cloud Function to Google Cloud.
+This repository contains code for a Google Cloud Function that fetches CSV files from the NWEA MAP API and uploads them to a Google Cloud Storage bucket. This repository is meant to be forked and configured to utilize GitHub Actions to deploy a Cloud Function to Google Cloud. This will allow future updates to this codebase to be brought into your environment
 
 The Cloud Function can be scheduled to be triggered nightly causing the CSV files in the Cloud Storage bucket to always represent current assessment term data as of the previous day.
 
@@ -31,13 +31,8 @@ In your Google Cloud project:
     * Click Create Secret
 4. Create a [Cloud Storage bucket](https://console.cloud.google.com/storage/browser) that will house your NWEA MAP CSV files
     * Give your service account the role *Storage Object Admin*
-5. Enable the [Cloud Functions API](https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview)
-6. Enable the [Cloud Build API](https://console.developers.google.com/apis/api/cloudbuild.googleapis.com/overview)
+5. 
 
-
-## Setup GitHub
-
-1. Fork this repository
 
 ## Scheduling a nightly trigger
 Google Cloud Scheduler can be used to automatically run the Cloud Function once a day.
@@ -57,12 +52,7 @@ Google Cloud Scheduler can be used to automatically run the Cloud Function once 
 13. Click **Continue**
 14. Click **Create**
 
-<!-- 1. Create a secret nwea-map-password that stores the NWEA MAP password
-2. Create a GCS bucket to store CSV extracts
-3. Create a service account
-4. Grant the service account Storage Object Creator to the bucket
-5. Grant the service account Secret Manager Secret Accessor to the secret
-
+<!-- 
 
 ## Test function locally:
 
