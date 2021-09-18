@@ -1,0 +1,25 @@
+name: Cloud Functions Deploy
+on:
+  push:
+    branches:
+    - master
+    - release/*
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Cloud Functions Deploy
+        id: deploy-function
+        uses: google-github-actions/deploy-cloud-functions@v0.1.2
+        with:
+          credentials: ${{ secrets.GCP_SA_KEY }}
+          name: nwea-map-etl
+          project_id: ${{ secrets.GCP_PROJECT }}
+          region: us-central1
+          source_dir: src
+          env_vars: NWEA_USERNAME=${{secrets.NWEA_USERNAME}},GCS_BUCKET=${{secrets.GCS_BUCKET}}
+          entry_point: main
+          runtime: python37
+          service_account_email: ${{ secrets.SA_EMAIL }}
