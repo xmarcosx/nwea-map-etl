@@ -15,6 +15,18 @@ In NWEA MAP:
 6. Select your preferred options under Contents
 7. Click Save
 
+## Deploy Cloud Function
+Navigate to your Google Cloud project and active Cloud Shell.
+
+```bash
+
+git clone https://github.com/xmarcosx/nwea-map-etl.git;
+cd nwea-map-etl;
+cp .env-prod .env;
+
+```
+
+
 ## Configure Google Cloud
 In your Google Cloud project:
 

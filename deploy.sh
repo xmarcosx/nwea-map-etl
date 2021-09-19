@@ -27,7 +27,7 @@ gcloud functions deploy nwea-map-etl \
     --runtime python37 \
     --entry-point main \
     --trigger-http \
-    --set-env-vars GCS_BUCKET=$GCS_BUCKET \
+    --set-env-vars GCS_BUCKET=nwea-map-$GOOGLE_CLOUD_PROJECT \
     --set-env-vars NWEA_USERNAME=$NWEA_USERNAME;
 
  gcloud scheduler jobs create http nwea_map_function_trigger \
