@@ -10,9 +10,18 @@ gcloud iam service-accounts create nwea-map-etl;
 
 gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:nwea-map-etl@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
-    --role=roles/iam.serviceAccountUser \
-    --role=roles/cloudfunctions.developer \
-    --role=roles/secretmanager.secretAccessor \
+    --role=roles/iam.serviceAccountUser;
+
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:nwea-map-etl@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+    --role=roles/cloudfunctions.developerl
+
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:nwea-map-etl@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
+    --role=roles/secretmanager.secretAccessor;
+
+gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
+    --member="serviceAccount:nwea-map-etl@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
     --role=roles/storage.objectAdmin;
 
 printf $NWEA_PASSWORD | gcloud secrets create nwea-map-password --data-file=-;

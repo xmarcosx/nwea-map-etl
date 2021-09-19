@@ -23,7 +23,12 @@ Navigate to your Google Cloud project and active Cloud Shell.
 git clone https://github.com/xmarcosx/nwea-map-etl.git;
 cd nwea-map-etl;
 cp .env-prod .env;
+```
 
+Complete the .env file
+
+```bash
+bash deploy.sh
 ```
 
 
