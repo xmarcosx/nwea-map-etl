@@ -14,7 +14,7 @@ gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
 
 gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:nwea-map-etl@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
-    --role=roles/cloudfunctions.developerl
+    --role=roles/cloudfunctions.developer;
 
 gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT \
     --member="serviceAccount:nwea-map-etl@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com" \
