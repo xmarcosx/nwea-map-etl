@@ -5,6 +5,7 @@ fi
 gcloud services enable cloudbuild.googleapis.com;
 gcloud services enable cloudfunctions.googleapis.com;
 gcloud services enable cloudscheduler.googleapis.com;
+gcloud services enable secretmanager.googleapis.com;
 
 gcloud iam service-accounts create nwea-map-etl;
 
