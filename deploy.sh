@@ -41,8 +41,12 @@ gcloud functions deploy nwea-map-etl \
     --set-env-vars NWEA_USERNAME=$NWEA_USERNAME \
     --quiet;
 
- gcloud scheduler jobs create http nwea_map_function_trigger \
+gcloud scheduler jobs create http nwea_map_function_trigger \
     --schedule "0 5 * * *" \
     --time-zone "America/Chicago"\
-    --uri "http://myproject/my-url.com"
-    --http-method POST;
+    --uri "https://us-central1-$GOOGLE_CLOUD_PROJECT.cloudfunctions.net/nwea-map-etl" \
+    --http-method POST \
+    --oidc-service-account-email $GOOGLE_CLOUD_PROJECT@appspot.gserviceaccount.com \
+    --oidc-token-audience "https://us-central1-$GOOGLE_CLOUD_PROJECT.cloudfunctions.net/nwea-map-etl" \
+    --project $GOOGLE_CLOUD_PROJECT \
+    --quiet;
