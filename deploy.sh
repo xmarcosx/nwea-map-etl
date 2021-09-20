@@ -41,6 +41,8 @@ gcloud functions deploy nwea-map-etl \
     --set-env-vars NWEA_USERNAME=$NWEA_USERNAME \
     --quiet;
 
+gcloud app create --region=us-central;
+
 gcloud scheduler jobs create http nwea_map_function_trigger \
     --schedule "0 5 * * *" \
     --time-zone "America/Chicago"\
