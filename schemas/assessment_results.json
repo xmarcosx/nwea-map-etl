@@ -116,8 +116,6 @@
     { "name": "goal8_std_err", "type": "STRING", "mode": "NULLABLE" },
     { "name": "goal8_range", "type": "STRING", "mode": "NULLABLE" },
     { "name": "goal8_adjective", "type": "STRING", "mode": "NULLABLE" },
-    { "name": "accommodation_categories", "type": "STRING", "mode": "NULLABLE" },
-    { "name": "accommodations", "type": "STRING", "mode": "NULLABLE" },
     { "name": "typical_fall_to_fall_growth", "type": "STRING", "mode": "NULLABLE" },
     { "name": "typical_fall_to_winter_growth", "type": "STRING", "mode": "NULLABLE" },
     { "name": "typical_fall_to_spring_growth", "type": "STRING", "mode": "NULLABLE" },
